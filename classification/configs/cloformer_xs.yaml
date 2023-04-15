@@ -1,0 +1,25 @@
+MODEL:
+  TYPE: cloformer
+  NAME: cloformer_xs
+  cloformer:
+    in_chans: 3
+    num_classes: 1000
+    embed_dims: [48, 96, 160, 352]
+    depths: [2, 2, 6, 2]
+    num_heads: [3, 6, 10, 22]
+    group_splits: [[2, 1], [3, 3], [5, 5], [7, 15]]
+    kernel_sizes: [[3], [5], [7], [9]]
+    window_sizes: [8, 4, 2, 1]
+    mlp_kernel_sizes: [5, 5, 5, 5]
+    mlp_ratios: [4, 4, 4, 4]
+    attn_drop: 0.
+    mlp_drop: 0.
+    qkv_bias: True
+    drop_path_rate: 0.06
+    use_checkpoint: False
+    
+DATA:
+  NUM_WORKERS: 10
+  BATCH_SIZE: 256
+  DATA_PATH: /home/fanqh/imagenet
+  DATASET: imagenet
