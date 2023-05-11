@@ -1,2 +1,7 @@
 # CloFormer
 The official code of "Rethinking Local Perception in Lightweight Vision Transformer". Pretrained models and the code for detection and segmenatation will come soon
+
+[[arxiv](https://arxiv.org/abs/2303.17803)]
+
+### Introduction
+Vision Transformers (ViTs) have been shown to be effective in various vision tasks. However, resizing them to a mobile-friendly size leads to significant performance degradation. Therefore, developing lightweight vision transformers has become a crucial area of research. This paper introduces CloFormer, a lightweight vision transformer that leverages context-aware local enhancement. CloFormer explores the relationship between globally shared weights often used in vanilla convolutional operators and token-specific context-aware weights appearing in attention, then proposes an effective and straightforward module to capture high-frequency local information. In CloFormer, we introduce AttnConv, a convolution operator in attention's style. The proposed AttnConv uses shared weights to aggregate local information and deploys carefully designed context-aware weights to enhance local features. The combination of the AttnConv and vanilla attention which uses pooling to reduce FLOPs in CloFormer enables the model to perceive high-frequency and low-frequency information. Extensive experiments were conducted in image classification, object detection, and semantic segmentation, demonstrating the superiority of CloFormer.
